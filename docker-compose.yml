@@ -1,0 +1,54 @@
+version: "3"
+services:
+  db1:
+    image: mysql:5.7
+    container_name: db-con1
+    ports:
+      - 33065:3306
+    volumes:
+      - db-store1:/var/lib/mysql
+      - ./logs/mysql1:/var/log/mysql
+      - ./docker/mysql/my.cnf1:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=${DB_NAME1}
+      - MYSQL_USER=${DB_USER1}
+      - MYSQL_PASSWORD=${DB_PASS1}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS1}
+      - TZ=${TZ}
+  db2:
+    image: mysql:5.7
+    container_name: db-con2
+    command: --lower_case_table_names=1
+    ports:
+      - 33066:3306
+    volumes:
+      - db-store2:/var/lib/mysql
+      - ./logs/mysql2:/var/log/mysql
+      - ./docker/mysql/my.cnf2:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=${DB_NAME2}
+      - MYSQL_USER=${DB_USER2}
+      - MYSQL_PASSWORD=${DB_PASS2}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS2}
+      - TZ=${TZ}
+  db3:
+    image: mysql:5.7
+    container_name: db-his
+    command: --lower_case_table_names=1
+    ports:
+      - 33067:3306
+    volumes:
+      - db-store3:/var/lib/mysql
+      - ./logs/mysql3:/var/log/mysql
+      - ./docker/mysql/my.cnf3:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_DATABASE=${DB_NAME3}
+      - MYSQL_USER=${DB_USER3}
+      - MYSQL_PASSWORD=${DB_PASS3}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS3}
+      - TZ=${TZ}
+
+volumes:
+  db-store1:
+  db-store2:
+  db-store3:
