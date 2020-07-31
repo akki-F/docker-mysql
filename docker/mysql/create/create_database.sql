@@ -15,3 +15,6 @@ GRANT ALL ON stg_db_land.* TO 'admin'@'%';
 
 CREATE DATABASE IF NOT EXISTS `dev_db_hotel_arrangement`;
 GRANT ALL ON dev_db_hotel_arrangement.* TO 'admin'@'%';
+
+CREATE DATABASE IF NOT EXISTS `dev_db_hotel_lincoln`;
+GRANT ALL ON dev_db_hotel_arrangement.* TO 'admin'@'%';
