@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "CREATE DATABASE IF NOT EXISTS \`brc_base\` ;" | "${mysql[@]}"
+echo "GRANT ALL ON \`brc_base\`.* TO '"$DB_USER"'@'%' ;" | "${mysql[@]}"
+echo 'FLUSH PRIVILEGES ;' | "${mysql[@]}"
+
+echo "CREATE DATABASE IF NOT EXISTS \`brc_care\` ;" | "${mysql[@]}"
+echo "GRANT ALL ON \`brc_care\`.* TO '"$DB_USER"'@'%' ;" | "${mysql[@]}"
+echo 'FLUSH PRIVILEGES ;' | "${mysql[@]}"
+
+echo "CREATE DATABASE IF NOT EXISTS \`brc_data\` ;" | "${mysql[@]}"
+echo "GRANT ALL ON \`brc_data\`.* TO '"$DB_USER"'@'%' ;" | "${mysql[@]}"
+echo 'FLUSH PRIVILEGES ;' | "${mysql[@]}"
+
+echo "CREATE DATABASE IF NOT EXISTS \`wherenow\` ;" | "${mysql[@]}"
+echo "GRANT ALL ON \`wherenow\`.* TO '"$DB_USER"'@'%' ;" | "${mysql[@]}"
+echo 'FLUSH PRIVILEGES ;' | "${mysql[@]}"
+
+echo "CREATE DATABASE IF NOT EXISTS \`stg_db_land\` ;" | "${mysql[@]}"
+echo "GRANT ALL ON \`stg_db_land\`.* TO '"$DB_USER"'@'%' ;" | "${mysql[@]}"
+echo 'FLUSH PRIVILEGES ;' | "${mysql[@]}"
+
+echo "CREATE DATABASE IF NOT EXISTS \`dev_db_hotel_arrangement\` ;" | "${mysql[@]}"
+echo "GRANT ALL ON \`dev_db_hotel_arrangement\`.* TO '"$DB_USER"'@'%' ;" | "${mysql[@]}"
+echo 'FLUSH PRIVILEGES ;' | "${mysql[@]}"
